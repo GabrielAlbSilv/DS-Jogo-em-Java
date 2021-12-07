@@ -39,10 +39,10 @@ public class Splash_GUI extends javax.swing.JFrame {
                                                        
                         
                         }else if (progresso.getValue() <=30){
-                            mensagem.setText("Preparando arquivos");
+                            mensagem.setText("Desenhando o jogo");
                           sleep(100);  
                         } else if (progresso.getValue() <=99){
-                            mensagem.setText("Fazendo alugns ajustes");
+                            mensagem.setText("Preparando");
                             
                         }else{
                             mensagem.setText("Finalizado");
@@ -88,11 +88,15 @@ public class Splash_GUI extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/logo.png"))); // NOI18N
         panelImage1.setLayout(null);
         panelImage1.add(progresso);
-        progresso.setBounds(120, 200, 170, 20);
+        progresso.setBounds(120, 240, 170, 20);
+
+        mensagem.setBackground(new java.awt.Color(204, 255, 204));
+        mensagem.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         panelImage1.add(mensagem);
-        mensagem.setBounds(134, 240, 140, 20);
+        mensagem.setBounds(150, 270, 150, 20);
 
         getContentPane().add(panelImage1);
         panelImage1.setBounds(0, 0, 400, 300);

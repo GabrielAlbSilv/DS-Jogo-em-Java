@@ -27,21 +27,60 @@ public class Jogo_GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panelImage1 = new org.edisoncor.gui.panel.PanelImage();
+        BtnSair = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        BtnJogar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/wallpaper.jpg"))); // NOI18N
+        panelImage1.setLayout(null);
 
-        pack();
+        BtnSair.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        BtnSair.setText("Sair");
+        BtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSairActionPerformed(evt);
+            }
+        });
+        panelImage1.add(BtnSair);
+        BtnSair.setBounds(160, 210, 80, 30);
+
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        jLabel1.setText("Jogo da Velha");
+        panelImage1.add(jLabel1);
+        jLabel1.setBounds(140, 30, 130, 40);
+
+        BtnJogar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        BtnJogar.setText("Jogar");
+        BtnJogar.setToolTipText("");
+        BtnJogar.setFocusPainted(false);
+        BtnJogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnJogarActionPerformed(evt);
+            }
+        });
+        panelImage1.add(BtnJogar);
+        BtnJogar.setBounds(160, 120, 80, 30);
+
+        getContentPane().add(panelImage1);
+        panelImage1.setBounds(0, 0, 400, 300);
+
+        setSize(new java.awt.Dimension(416, 338));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSairActionPerformed
+        System.exit(0);
+        dispose();
+    }//GEN-LAST:event_BtnSairActionPerformed
+
+    private void BtnJogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnJogarActionPerformed
+         new Execuntando_GUI().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtnJogarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +118,9 @@ public class Jogo_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnJogar;
+    private javax.swing.JButton BtnSair;
+    private javax.swing.JLabel jLabel1;
+    private org.edisoncor.gui.panel.PanelImage panelImage1;
     // End of variables declaration//GEN-END:variables
 }
