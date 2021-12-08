@@ -33,8 +33,10 @@ public class Jogo_GUI extends javax.swing.JFrame {
         BtnJogar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
+        panelImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/wallpaper.jpg"))); // NOI18N
         panelImage1.setLayout(null);
 
@@ -68,7 +70,7 @@ public class Jogo_GUI extends javax.swing.JFrame {
         getContentPane().add(panelImage1);
         panelImage1.setBounds(0, 0, 400, 300);
 
-        setSize(new java.awt.Dimension(416, 338));
+        setSize(new java.awt.Dimension(400, 300));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
