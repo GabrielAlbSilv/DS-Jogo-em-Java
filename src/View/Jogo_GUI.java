@@ -37,11 +37,13 @@ public class Jogo_GUI extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         panelImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/wallpaper.jpg"))); // NOI18N
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/papelwallpaper2.jpg"))); // NOI18N
         panelImage1.setLayout(null);
 
         BtnSair.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         BtnSair.setText("Sair");
+        BtnSair.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        BtnSair.setContentAreaFilled(false);
         BtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSairActionPerformed(evt);
@@ -58,6 +60,8 @@ public class Jogo_GUI extends javax.swing.JFrame {
         BtnJogar.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         BtnJogar.setText("Jogar");
         BtnJogar.setToolTipText("");
+        BtnJogar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        BtnJogar.setContentAreaFilled(false);
         BtnJogar.setFocusPainted(false);
         BtnJogar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

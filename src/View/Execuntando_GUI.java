@@ -7,6 +7,9 @@ public class Execuntando_GUI extends javax.swing.JFrame {
 
     boolean jogador1Ativo = true;
     boolean jogador2Ativo = false;
+    int NumeroDeVitoriasJogador1 = 0;
+    int NumeroDeVitoriasJogador2 = 0;
+    int NumeroDeVitoriasEmpate = 0;
 
     public Execuntando_GUI() {
         initComponents();
@@ -122,17 +125,51 @@ public class Execuntando_GUI extends javax.swing.JFrame {
         }
 
         }
-        public void Vencedor(String JogadorVencedor){
-        if(JogadorVencedor.equals("Jogador 1")){
-        JOptionPane.showMessageDialog(null,"Parabens Jogador 1");
+       
+          
+   
+    public void Vencedor(String JogadorVencedor){
+    if(JogadorVencedor.equals("Jogador 1")){
+    JOptionPane.showMessageDialog(null,"Parabens Jogador 1. Voce venceu o jogo");
+    NumeroDeVitoriasJogador1++;
+     
+   LimparCampos();
 
-        }
-        if(JogadorVencedor.equals("Jogador 2")){
-        JOptionPane.showMessageDialog(null,"Parabens Jogador 2");
 
-        }
+    }
+    if(JogadorVencedor.equals("Jogador 2")){
+    JOptionPane.showMessageDialog(null,"Parabens Jogador 2. Voce venceu o jogo");
+   
+    NumeroDeVitoriasJogador2++;
+    
+    LimparCampos();
+    }
+    if(JogadorVencedor.equals("empate")){
+    JOptionPane.showMessageDialog(null,"Jogo empatado!!!, jogue novamente");
+    NumeroDeVitoriasEmpate++;
+   
+    LimparCampos();
+    }
+    }
 
-        }
+    public void LimparCampos(){
+
+    B1.setText("");
+    B2.setText("");
+    B3.setText("");
+    B4.setText("");
+    B5.setText("");
+    B6.setText("");
+    B7.setText("");
+    B8.setText("");
+    B9.setText("");
+
+    jogador1Ativo = true;
+    jogador2Ativo = false;
+
+    }
+
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -153,18 +190,16 @@ public class Execuntando_GUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(null);
 
         panelImage1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/wallpaper.jpg"))); // NOI18N
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/papelwallpaper2.jpg"))); // NOI18N
         panelImage1.setLayout(null);
 
         B7.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
@@ -266,23 +301,29 @@ public class Execuntando_GUI extends javax.swing.JFrame {
         panelImage1.add(B8);
         B8.setBounds(130, 190, 60, 40);
 
+        BtnNew.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         BtnNew.setText("Novo jogo");
+        BtnNew.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        BtnNew.setContentAreaFilled(false);
         BtnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnNewActionPerformed(evt);
             }
         });
         panelImage1.add(BtnNew);
-        BtnNew.setBounds(290, 300, 107, 23);
+        BtnNew.setBounds(287, 300, 110, 30);
 
+        BtnSair.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         BtnSair.setText("Sair do jogo");
+        BtnSair.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        BtnSair.setContentAreaFilled(false);
         BtnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnSairActionPerformed(evt);
             }
         });
         panelImage1.add(BtnSair);
-        BtnSair.setBounds(430, 300, 107, 23);
+        BtnSair.setBounds(427, 300, 110, 30);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setText("Informações do jogo");
@@ -299,11 +340,6 @@ public class Execuntando_GUI extends javax.swing.JFrame {
         panelImage1.add(jLabel3);
         jLabel3.setBounds(420, 70, 80, 30);
 
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel4.setText("Vitorias: 0");
-        panelImage1.add(jLabel4);
-        jLabel4.setBounds(380, 100, 100, 30);
-
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         jLabel5.setText("Jogador 2");
         panelImage1.add(jLabel5);
@@ -314,15 +350,10 @@ public class Execuntando_GUI extends javax.swing.JFrame {
         panelImage1.add(jLabel6);
         jLabel6.setBounds(420, 150, 80, 30);
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel7.setText("Vitorias: 0");
-        panelImage1.add(jLabel7);
-        jLabel7.setBounds(380, 180, 100, 30);
-
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jLabel8.setText("Empates:");
-        panelImage1.add(jLabel8);
-        jLabel8.setBounds(380, 230, 70, 21);
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel4.setText("Vitorias: 0");
+        panelImage1.add(jLabel4);
+        jLabel4.setBounds(390, 110, 90, 30);
 
         getContentPane().add(panelImage1);
         panelImage1.setBounds(0, 0, 550, 350);
@@ -528,8 +559,6 @@ public class Execuntando_GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private org.edisoncor.gui.panel.PanelImage panelImage1;
     // End of variables declaration//GEN-END:variables
 }

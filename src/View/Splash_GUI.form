@@ -35,7 +35,7 @@
           </Border>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Image/logo.png"/>
+          <Image iconType="3" name="/Image/splashwallpaper.jpg"/>
         </Property>
       </Properties>
       <Constraints>
